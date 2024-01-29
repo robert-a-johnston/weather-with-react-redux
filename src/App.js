@@ -1,11 +1,11 @@
 import './App.css';
-import Card from './components/card/CardComponent';
+import HomePage from './components/home/HomeComponent';
 
 function App() {
   return (
 
     
-    <Card />
+    <HomePage />
   );
 }
 
