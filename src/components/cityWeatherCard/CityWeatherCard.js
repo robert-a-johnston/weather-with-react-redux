@@ -1,12 +1,13 @@
-// Create a react card component
-
 import React from "react";
+
 
 function Card(props) {
     return (
         <div className="card">
         <div className="card-content">
-          <div className="card-title">New York</div>
+          
+            <div className="card-title">{props.city}</div>
+          
           <p className="card-text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
           </p>
