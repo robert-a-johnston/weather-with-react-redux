@@ -1,22 +1,22 @@
-import React from "react";
-
+import React, { useState } from "react";
 import "./Home.css";
-import Header from "../header/Header";
-import Card from "../cityWeatherCard/CityWeatherCard";
+import CityWeatherCard from "../cityWeatherCard/CityWeatherCard";
 
-const HomePage = ({cities}) => (
+const HomePage = () => {
+  const [cities, setCities] = useState(['New York', 'Boston']);
 
+  return (
     <div>
-        <Header/>
-        <div className="row">
-            <h1>hello</h1>
-        </div>
-        <div className="row">
-            {cities.map((city, index) => (
-                <Card key={index} city={city}/>
-            ))}
-        </div>
+      <div className="row">
+        <h1>hello</h1>
+      </div>
+      <div className="row">
+        {cities.map((city, index) => (
+          <CityWeatherCard key={index} city={city} />
+        ))}
+      </div>
     </div>
-);
+  );
+};
 
 export default HomePage;

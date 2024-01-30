@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import HomePage from './components/home/Home';
+import Header from './components/header/Header';
+import AddCityForm from './components/addCityForm/AddCityForm';
 
 function App() {
 
-  const[cities, setCities] = useState(['New York', 'Boston'])
+  
     
   // This function adds a City name to the current state.
   // const addCity = newCityName => {
@@ -12,9 +14,11 @@ function App() {
   //   };
   
   return (
-
-    
-    <HomePage cities={cities}/>
+    <div>
+      <Header/>
+      <AddCityForm/>
+      <HomePage/>
+    </div>
   );
 }
 
