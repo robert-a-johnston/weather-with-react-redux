@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import "./Home.css";
+import React from "react";
+import "./HomePage.css";
 import CityWeatherCard from "../cityWeatherCard/CityWeatherCard";
 
-const HomePage = () => {
-  const [cities, setCities] = useState(['New York', 'Boston']);
+const HomePage = ({cities}) => {
+  
 
   return (
     <div>
       <div className="row">
-        <h1>hello</h1>
+        <h1>WEATHER LIST</h1>
       </div>
       <div className="row">
         {cities.map((city, index) => (
