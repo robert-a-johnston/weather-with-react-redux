@@ -11,6 +11,10 @@ function App() {
   const addCity = newCityName => {
     setCities(prevCities => [...prevCities, newCityName]);
   };
+
+  const removeCity = cityName => {
+    setCities(prevCities => prevCities.filter(city => city !== cityName));
+  };
   
   return (
     <div className="appContainer">
@@ -25,12 +29,12 @@ function App() {
           <Route
             exact
             path="/"
-            element={<HomePage cities={cities} />}
+            element={<HomePage cities={cities} onRemove={removeCity} />}
           />
           <Route 
             exact 
             path="/home" 
-            element={<HomePage cities={cities} />} />
+            element={<HomePage cities={cities} onRemove={removeCity} />} />
         </Routes>
       </div>
     </div>

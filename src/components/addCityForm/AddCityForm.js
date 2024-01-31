@@ -4,7 +4,6 @@ function AddCityForm({ addCity }) {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = event => {
-    console.log(event.target.value)
     setInputValue(event.target.value);
   };
 

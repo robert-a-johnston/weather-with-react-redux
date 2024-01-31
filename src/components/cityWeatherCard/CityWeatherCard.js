@@ -4,6 +4,13 @@ import PropTypes from 'prop-types'
 
 function CityWeatherCard(props) {
   const { city, currentTemp, lowTemp, highTemp, humidity, wind, feelsLike } = props;
+
+  const handleRemoveClick = () => {
+    if(props.onRemove) {
+      props.onRemove();
+    }
+  }
+  
   return (
       <div className="card">
       <div className="card-content">
@@ -18,7 +25,7 @@ function CityWeatherCard(props) {
       </div>
         <div className="card-content">
           <span className="btn btn-details">Details</span>
-          <span className="btn btn-remove">Remove</span>
+          <span className="btn btn-remove" onClick={handleRemoveClick}>Remove</span>
         </div>
       </div>
   );
@@ -30,6 +37,9 @@ CityWeatherCard.propTypes = {
   lowTemp: PropTypes.number.isRequired,
   highTemp: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
+  wind: PropTypes.number.isRequired,
+  feelsLike: PropTypes.number.isRequired,
+
 };
 
 CityWeatherCard.defaultProps = {
