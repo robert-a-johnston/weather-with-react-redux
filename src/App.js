@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './components/home/HomePage';
+import DetailView from './components/detailView/DetailView';
 import AddCityForm from './components/addCityForm/AddCityForm';
+
+
 
 function App() {
   const [cities, setCities] = useState(['New York', 'Chennai', 'Monterrey']);
@@ -19,22 +22,18 @@ function App() {
   return (
     <div className="appContainer">
       <div className="header">
-        <Link to="/home"> {/* Use Link for navigation */}
+        <Link to="/">
           <h1>My Weather App - React-Redux</h1>
         </Link>
+      <div><AddCityForm addCity={addCity}/></div>
       </div>
       <div className="contentArea">
-        <AddCityForm addCity={addCity} />
         <Routes>
           <Route
-            exact
             path="/"
             element={<HomePage cities={cities} onRemove={removeCity} />}
           />
-          <Route 
-            exact 
-            path="/home" 
-            element={<HomePage cities={cities} onRemove={removeCity} />} />
+          <Route path="/detailView/:city" element={<DetailView />} />
         </Routes>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import './CityWeatherCard.css'
 
 
 function CityWeatherCard(props) {
@@ -24,7 +26,7 @@ function CityWeatherCard(props) {
         <div>feels like: {feelsLike}</div>
       </div>
         <div className="card-content">
-          <span className="btn btn-details">Details</span>
+          <Link to={`/detailView/${city}`} className="btn btn-details">Details</Link>
           <span className="btn btn-remove" onClick={handleRemoveClick}>Remove</span>
         </div>
       </div>
