@@ -1,11 +1,13 @@
-.title{
+.title {
     text-align: center;
     font-size: 45px;
     font-weight: bold;
-}
-.weatherList{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
   }
+  
+  .weatherList {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+    gap: 20px; 
+  }
+  
