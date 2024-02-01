@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './components/home/HomePage';
