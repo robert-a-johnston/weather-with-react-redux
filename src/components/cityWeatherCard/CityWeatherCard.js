@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import './CityWeatherCard.css'
 
 
 function CityWeatherCard(props) {
