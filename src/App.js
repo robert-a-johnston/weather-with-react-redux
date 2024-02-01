@@ -4,6 +4,9 @@ import './App.css';
 
 import HomePage from './components/home/HomePage';
 import DetailView from './components/detailView/DetailView';
+import AddCityForm from './components/addCityForm/AddCityForm';
+
+
 
 function App() {
   const [cities, setCities] = useState(['New York', 'Chennai', 'Monterrey']);
@@ -22,6 +25,7 @@ function App() {
         <Link to="/">
           <h1>My Weather App - React-Redux</h1>
         </Link>
+      <div><AddCityForm addCity={addCity}/></div>
       </div>
       <div className="contentArea">
         <Routes>

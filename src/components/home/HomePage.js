@@ -11,9 +11,7 @@ const HomePage = ({ cities, onRemove }) => {
       </div>
       <div className="weatherList">
         {cities.map((city, index) => (
-          <Link key={index} to={`/detailView/${city}`}>
-            <CityWeatherCard city={city} onRemove={() => onRemove(city)} />
-          </Link>
+            <CityWeatherCard key={index} city={city} onRemove={() => onRemove(city)} />
         ))}
       </div>
     </div>
