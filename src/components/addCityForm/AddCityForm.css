@@ -1,0 +1,12 @@
+input[type="text"] {
+    padding: 10px; /* Add some padding for better visual appearance */
+    border: 2px solid #007bff; /* Add a blue border */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Adjust font size */
+    outline: none; /* Remove the default focus outline */
+    transition: border-color 0.3s ease-in-out; /* Add a smooth transition for the border color */
+  }
+  
+  input[type="text"]:focus {
+    border-color: #ff5722; /* Change border color when input is focused */
+  }

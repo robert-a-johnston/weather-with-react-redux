@@ -25,7 +25,7 @@ function App() {
         <Link to="/">
           <h1>My Weather App - React-Redux</h1>
         </Link>
-        <div><AddCityForm addCity={addCity}/></div>
+        <div className='addCity'><AddCityForm addCity={addCity}/></div>
       </div>
       <div className="contentArea">
         <Routes>

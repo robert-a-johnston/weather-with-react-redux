@@ -5,3 +5,11 @@
   padding: 20px;
   border: 1px solid gray;
 }
+.header {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: bold;
+}
