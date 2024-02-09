@@ -2,14 +2,18 @@ import React from "react";
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './CityWeatherCard.css'
+import { connect } from 'react-redux'
+import { removeCity } from '../../redux/actions/locationAction'
 
 
-function CityWeatherCard(props) {
-  const { city, currentTemp, lowTemp, highTemp, humidity, wind, feelsLike } = props;
+
+
+const CityWeatherCard = ({ cityName, currentTemp, lowTemp, highTemp, humidity, wind, feelsLike, onRemove }) => {
 
   const handleRemoveClick = () => {
-    if(props.onRemove) {
-      props.onRemove();
+    console.log('removing city: ', cityName)
+    if(onRemove) {
+      onRemove(cityName);
     }
   }
   
@@ -17,7 +21,7 @@ function CityWeatherCard(props) {
       <div className="card">
       <div className="card-content">
           
-        <div className="card-title">{city}</div>
+        <div className="card-title">{cityName}</div>
         <div>current: {currentTemp}</div>
         <div>high: {highTemp}</div>
         <div>low: {lowTemp}</div>
@@ -26,8 +30,8 @@ function CityWeatherCard(props) {
         <div>feels like: {feelsLike}</div>
       </div>
         <div className="card-content">
-          <Link to={`/detailView/${city}`} className="btn btn-details">Details</Link>
-          <span className="btn btn-remove" onClick={handleRemoveClick}>Remove</span>
+          <Link to={`/detailView/${cityName}`} className="btn btn-details">Details</Link>
+            <button className="btn btn-remove"      onClick={handleRemoveClick}>Remove</button>
         </div>
       </div>
   );
@@ -54,4 +58,4 @@ CityWeatherCard.defaultProps = {
   feelsLike: 60,
 };
 
-export default CityWeatherCard;
+export default connect(null,{onRemove: removeCity})(CityWeatherCard);

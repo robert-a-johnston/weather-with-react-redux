@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+
+import { addCity } from '../../redux/actions/locationAction';
 import './AddCityForm.css';
 
 
-function AddCityForm({ addCity }) {
+function AddCityForm(props) {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = event => {
@@ -11,7 +14,7 @@ function AddCityForm({ addCity }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    addCity(inputValue);
+    props.addCity(inputValue);
     setInputValue('');
   };
 
@@ -30,4 +33,11 @@ function AddCityForm({ addCity }) {
   );
 }
 
-export default AddCityForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addCity: cityName => dispatch(addCity(cityName)),
+  };
+};
+
+export default connect(
+  null, mapDispatchToProps)(AddCityForm);
