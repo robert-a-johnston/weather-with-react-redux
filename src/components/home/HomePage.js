@@ -1,20 +1,32 @@
 import React from 'react';
-import './HomePage.css';
-import CityWeatherCard from '../cityWeatherCard/CityWeatherCard';
+import { connect } from 'react-redux';
 
-const HomePage = ({ cities, onRemove }) => {
-  return (
-    <div>
-      <div className="title">
-        <h1>WEATHER LIST</h1>
-      </div>
-      <div className="weatherList">
-        {cities.map((city, index) => (
-            <CityWeatherCard key={index} city={city} onRemove={() => onRemove(city)} />
-        ))}
-      </div>
+import CityWeather from '../cityWeatherCard/CityWeatherCard';
+import { removeCity } from '../../redux/actions/locationAction';
+
+const HomePage = ({ cities }) => (
+  <div>
+    <div className="row">
+      <h1>Overview - Weather Widget</h1>
     </div>
-  );
+    
+    <div className="weatherList">
+      {cities.map(city => (
+        <div key={city}> 
+          <CityWeather cityName={city} onRemove={() => removeCity(city)} />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const mapStateToProps = state => ({
+  cities: state.locations,
+});
+
+const mapDispatchToProps = {
+  removeCity,
 };
 
-export default HomePage;
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
