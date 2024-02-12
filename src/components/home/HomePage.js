@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import CityWeather from '../cityWeatherCard/CityWeatherCard';
 import { removeCity } from '../../redux/actions/locationAction';
 
+import './HomePage.css';
+
 const HomePage = ({ cities }) => (
   <div>
     <div className="row">
